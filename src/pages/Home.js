@@ -4,13 +4,15 @@ import Carousel3 from '../Components/Carousel3/Carousel3'
 import Carousel1 from '../Components/Carousel1/Carousel1'
 import Carousel2 from '../Components/Carousel2/Carousel2'
 import Notification from '../Components/Notification/Notification'
-import DynamicBreadcrumbs from '../Components/DynamicBreadcrumbs/DynamicBreadcrumbs'
-import Footer from '../Components/Footer/Footer'
+import Layout from '../Layout/Layout'
 
 const Home = () => {
+
+
   return (
-    <>
+    <Layout>
       <div className="contain-fluid bg-gray-100">
+      
         <div className="container mx-auto p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <div className="sm:col-span-2 md:col-span-2">
             {/* Left Side Content */}
@@ -47,10 +49,10 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <DynamicBreadcrumbs />
-      <Footer/>
+      
 
-    </>
+
+    </Layout>
   )
 }
 

@@ -1,9 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const DynamicBreadcrumbs = () => {
     return (
         <section className="relative">
-            {/* Banner Section */}
             <div
                 className="Innerbaner relative w-full h-48 md:h-64 bg-cover bg-center"
                 style={{ backgroundImage: 'url("/img/BreadCrumbs.png")' }}
@@ -18,26 +18,25 @@ const DynamicBreadcrumbs = () => {
                             </li>
                             <span>/</span>
                             <li className="breadcrumb-item">
-                                <a href="#" className="text-white font-semibold hover:underline">Connect</a>
+                                <a href="#" className="text-white font-semibold hover:underline">About us</a>
                             </li>
                         </ol>
                     </nav>
-                    <h1 className="text-2xl md:text-3xl font-bold text-center md:text-left">Directory</h1>
+                    <h1 className="text-2xl md:text-3xl font-bold text-center md:text-left">About US</h1>
                 </div>
             </div>
 
             {/* Navigation Tabs */}
-            <div className="bg-[#0B2641] mb-10 text-white py-6 md:py-8 px-4 md:px-8 rounded-lg w-full max-w-screen-xl mx-auto mt-[-30px] md:mt-[-60px] relative z-20">
+            <div className="bg-[#0B2641] mb-4 text-white py-6 md:py-8 px-4 md:px-8 rounded-lg w-full max-w-screen-xl mx-auto mt-[-30px] md:mt-[-60px] relative z-20">
                 <ul className="flex flex-wrap justify-center md:justify-start gap-3 md:gap-4 text-sm">
-                    <li><a href="#" className="px-4 py-2 rounded font-bold text-base md:text-lg block text-center">
-                        Contact Us
-                    </a></li>
-                    <li><a href="#" className="px-4 py-2 rounded font-bold text-base md:text-lg block text-center">Directory</a></li>
-                    <li><a href="#" className="px-4 py-2 rounded text-base md:text-lg block text-center">RTI</a></li>
-                    <li><a href="#" className="px-4 py-2 rounded text-base md:text-lg block text-center">Grievance Redressal</a></li>
-                    <li><a href="#" className="px-4 py-2 rounded text-base md:text-lg block text-center">Public Consultation</a></li>
-                    <li><a href="#" className="px-4 py-2 rounded text-base md:text-lg block text-center">Parliament Questions</a></li>
-                    <li><a href="#" className="px-4 py-2 rounded text-base md:text-lg block text-center">Visitor's Pass</a></li>
+                
+                    <li><Link to="#" className="px-4 py-2 rounded font-bold text-base md:text-lg block text-center">About Us</Link></li>
+                    <li><Link to="/guidance" className="px-4 py-2 rounded text-base md:text-lg block text-center">Guidance</Link></li>
+                    <li><Link to="#" className="px-4 py-2 rounded text-base md:text-lg block text-center">Organization Registration</Link></li>
+                    <li><Link to="#" className="px-4 py-2 rounded text-base md:text-lg block text-center">Application Submission</Link></li>
+                    <li><Link to="#" className="px-4 py-2 rounded text-base md:text-lg block text-center">Regulatory Documents</Link></li>
+                    <li><Link to="#" className="px-4 py-2 rounded text-base md:text-lg block text-center">Contact Us</Link></li>
+                    <li><Link to="#" className="px-4 py-2 rounded text-base md:text-lg block text-center">FAQ</Link></li>
                 </ul>
             </div>
         </section>
