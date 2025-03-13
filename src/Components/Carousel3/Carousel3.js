@@ -54,10 +54,11 @@ const Carousel3 = () => {
             {/* Play/Pause Button */}
             <button
                 onClick={() => setIsPlaying(!isPlaying)}
-                className="absolute bottom-4 right-4 bg-gray-800 text-white px-3 py-2 rounded-md text-sm"
+                className="absolute bottom-4 right-4 bg-gray-800 text-white px-3 py-2 rounded-md text-sm flex items-center gap-2"
             >
-                {isPlaying ? "Pause" : "Play"}
+                <i className={`bi ${isPlaying ? "bi-pause" : "bi-play"} text-xl`}></i>
             </button>
+
 
             {/* Dots Indicator */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">

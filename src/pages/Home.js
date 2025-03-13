@@ -1,13 +1,26 @@
 import React from 'react';
-import Carousel4 from '../Components/Carousel4/Carousel4';
 import Carousel3 from '../Components/Carousel3/Carousel3';
-import Carousel1 from '../Components/Carousel1/Carousel1';
-import Carousel2 from '../Components/Carousel2/Carousel2';
 import Notification from '../Components/Notification/Notification';
 import Layout from '../Layout/Layout';
 import Carousel5 from '../Components/Carousel5/Carousel5';
+import { useState, useRef } from "react";
+
 
 const Home = () => {
+  const [isPlaying, setIsPlaying] = useState(true);
+  const videoRef = useRef(null);
+
+  const togglePlayPause = () => {
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current.play();
+        setIsPlaying(true);
+      } else {
+        videoRef.current.pause();
+        setIsPlaying(false);
+      }
+    }
+  };
   const data = [
     {
       "img_url": "/img/Govlogo.png",
@@ -61,7 +74,8 @@ const Home = () => {
             <section className="mb-4 grid gap-4">
               <Carousel3 />
             </section>
-            <section className='flex flex-col md:flex-row gap-4'>
+            <section className="flex flex-col md:flex-row gap-4">
+              {/* Image Section */}
               <div className="bg-white rounded-lg shadow-md h-[22rem] w-full md:w-[20rem]">
                 <img
                   src="https://cdn.zeebiz.com/sites/default/files/2023/07/25/252912-pm-modi-reuetrs.jpg?im=FitAndFill=(1200,900)"
@@ -69,20 +83,41 @@ const Home = () => {
                   className="w-full h-full object-cover rounded-md"
                 />
               </div>
-              <Carousel4 />
+
+              {/* Quote Section */}
+              <div className="w-full md:w-3/4 bg-white p-6 rounded-lg shadow-md flex flex-col justify-center">
+                <h2 className="text-xl font-bold text-gray-800">Inspirational Words</h2>
+                <p className="text-lg italic text-gray-600 mt-2">
+                  "For the first time, the World Audio Visual Entertainment Summit (WAVES) is going to be organized in our country.
+                  I would urge the entire entertainment and creative industry of India - whether you are a young creator or an
+                  established artist, associated with Bollywood or regional cinema, a professional from the TV industry, an expert in
+                  animation, gaming, or an innovator in entertainment technology - to be a part of WAVES."
+                </p>
+                <p className="mt-4 text-right font-semibold text-gray-700">- Narendra Modi</p>
+              </div>
             </section>
+
           </div>
 
-          {/* Right Side Content */}
           <div className="md:col-span-1">
             <section className="grid gap-4">
-              <div className="bg-[#2966A3] rounded-lg shadow-md h-[5rem] flex justify-center items-center">
-                <div className="flex justify-center items-center gap-4 w-[50%]">
-                  <button className="text-[#2966A3] bg-white p-2 rounded-lg flex-1 min-w-[120px]">Login</button>
-                  <button className="text-[#2966A3] bg-white p-2 rounded-lg flex-1 min-w-[120px]">Register</button>
+              <div className="bg-[#2966A3] rounded-lg shadow-md h-[5rem] flex items-center px-6">
+                {/* Left Side: Logo */}
+                <div className="flex items-center">
+                  <img src="/img/Biorraplogo.png" alt="BioRRAP" width={"auto"} height={100}  />
+                </div>
+
+                {/* Right Side: Buttons */}
+                <div className="ml-auto flex gap-4">
+                  <button className="text-[#2966A3] bg-white px-6 py-2 rounded-lg font-semibold min-w-[120px] hover:bg-gray-100 transition">
+                    Login
+                  </button>
+                  <button className="text-[#2966A3] bg-white px-6 py-2 rounded-lg font-semibold min-w-[120px] hover:bg-gray-100 transition">
+                    Register
+                  </button>
                 </div>
               </div>
-              <Notification />
+              <Notification/>
             </section>
           </div>
         </div>
@@ -108,28 +143,34 @@ const Home = () => {
           <p className="text-sm sm:text-base text-justify mt-2 mb-2">
             This portal will strengthen interdepartmental synergies and increase efficacy in functioning of agencies regulating various aspect of biological research. This will streamline the regulatory process and affirm ease of doing biological science.
           </p>
+          <div className="relative mx-auto mt-4 mb-4 w-80 max-w-xs sm:max-w-md">
+            {/* Video Element */}
+            <video
+              ref={videoRef}
+              src="/video/biorrap_intro.mov"
+              className="w-full rounded-lg shadow-md"
+              // controls
+              autoPlay
+              muted
+            />
 
-          {/* Desktop Grid View */}
-          <div className="hidden md:flex flex-wrap justify-center mt-4 mb-4 gap-6 mx-auto max-w-6xl">
-            {data.map((item, index) => (
-              <div key={index} className="flex flex-col items-center w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6">
-                <img src={item.img_url} alt={item.name} className="w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] object-contain" />
-                <p className="text-center text-sm mt-2 font-medium">{item.name}</p>
-              </div>
-            ))}
+            {/* Play/Pause Button */}
+            <button
+              onClick={togglePlayPause}
+              className="absolute inset-0 flex items-center justify-center w-full h-full bg-black bg-opacity-10 hover:bg-opacity-30 transition-opacity duration-200 rounded-lg border-0"
+            >
+              {isPlaying ? (
+                <i className="bi bi-pause-fill text-black display-4 text-lg rounded-lg bg-gray-300 p-2"></i> // Bootstrap Pause Icon
+              ) : (
+                  <i className="bi bi-play-fill text-black display-4 text-lg rounded-lg bg-gray-300 p-2"></i> // Bootstrap Play Icon
+              )}
+            </button>
           </div>
 
-          {/* Mobile Scrollable View */}
-          <div className="md:hidden overflow-x-auto scrollbar-hide mt-4 mb-4">
-            <div className="flex space-x-6 w-max px-4">
-              {data.map((item, index) => (
-                <div key={index} className="flex flex-col items-center min-w-[100px]">
-                  <img src={item.img_url} alt={item.name} className="w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] object-contain" />
-                  <p className="text-center text-sm mt-2 font-medium">{item.name}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+
+        
+
+      
         </div>
 
 

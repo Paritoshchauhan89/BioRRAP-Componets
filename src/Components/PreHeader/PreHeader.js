@@ -48,7 +48,11 @@ const PreHeader = () => {
 
                 {/* Accessibility Icon */}
                 <div className="flex items-center space-x-4 relative">
-                    <img src="/icons/skipcontent.svg" alt="Skip_to_Content" width={30} />
+                    <a href="#"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            document.getElementById("main-content").scrollIntoView({ behavior: "smooth" });
+                        }}><img src="/icons/skipcontent.svg" alt="Skip_to_Content" width={30} /></a>
                     <img src="/icons/language.svg" alt="Language" width={30} />
                     <button onClick={openModal} className="relative">
                         <img src="/icons/accessability.svg" alt="Accessibility" width={30} />

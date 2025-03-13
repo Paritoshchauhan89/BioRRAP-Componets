@@ -111,7 +111,7 @@ const Carousel5 = () => {
                             key={index}
                             className="w-full sm:w-1/2 bg-white rounded-lg shadow-md h-[22rem] p-4 relative"
                         >
-                            <div className="flex items-center space-x-4">
+                            <div className="flex items-center space-x-4 mx-auto justify-between">
                                 <h2 className="text-lg sm:text-xl font-semibold">{slide.title}</h2>
                                 <img src={slide.img_url} alt={slide.name} className="w-50 h-16 object-contain" />
                             </div>
@@ -119,8 +119,8 @@ const Carousel5 = () => {
                             <p className="text-right">{slide.name}</p>
                             <p className="mt-4 text-gray-700 text-justify">{slide.desc}</p>
                             <a href="/">
-                                <button className="absolute bottom-4 right-4 text-white bg-[#2966A3] p-2 rounded-lg min-w-[100px]">
-                                    Read More
+                                <button className="absolute bottom-4 right-4 text-white bg-[#2966A3] px-4 py-2 rounded-lg min-w-[100px] hover:bg-[#1e4f80] transition">
+                                    <i className="bi bi-box-arrow-up-right"></i>
                                 </button>
                             </a>
                         </div>
@@ -128,20 +128,23 @@ const Carousel5 = () => {
                 </div>
             </div>
 
-            {/* Navigation Buttons */}
+            {/* Navigation Buttons (Responsive) */}
             <button
                 onClick={prevSlide}
-                className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-300 p-2 rounded-full shadow-md"
+                className="absolute top-1/2 left-2 md:left-4 transform -translate-y-1/2 bg-gray-300 p-3 rounded-full shadow-md hover:bg-gray-400 transition md:ml-[-60px]"
             >
-                ◀
+                <i className="bi bi-caret-left"></i>
             </button>
             <button
                 onClick={nextSlide}
-                className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-gray-300 p-2 rounded-full shadow-md"
+                className="absolute top-1/2 right-2 md:right-4 transform -translate-y-1/2 bg-gray-300 p-3 rounded-full shadow-md hover:bg-gray-400 transition md:mr-[-60px]"
             >
-                ▶
+                <i className="bi bi-caret-right"></i>
             </button>
+
         </div>
+
+
     );
 };
 
