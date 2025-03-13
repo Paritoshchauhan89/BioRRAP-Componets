@@ -37,22 +37,8 @@ const AccessibilityModal = ({ isOpen, onClose }) => {
                         <img src="/icons/HighlightLinks.svg" alt="Highlight Links" width={30} className="mx-auto" />
                         Highlight Links
                     </button>
-                    <button className="border p-2 rounded text-center" onClick={() => applyTheme("highlight-links")}>
-                        <img src="/icons/Inverted.svg" alt="Inverted" width={30} className="mx-auto" />
-                        Invert
-                    </button>
-                    <button className="border p-2 rounded text-center" onClick={() => applyTheme("highlight-links")}>
-                        <img src="/icons/Saturation.svg" alt="Saturation" width={30} className="mx-auto" />
-                        Saturation
-                    </button>
-                    <button className="border p-2 rounded text-center" onClick={() => applyTheme("highlight-links")}>
-                        <img src="/icons/ZoomIn.svg" alt="Zoom IN" width={30} className="mx-auto" />
-                        Zoom IN 
-                    </button>
-                    <button className="border p-2 rounded text-center" onClick={() => applyTheme("highlight-links")}>
-                        <img src="/icons/ZoomOut.svg" alt="Zoom OUT" width={30} className="mx-auto" />
-                        Zoom OUT
-                    </button>
+               
+                   
                 </div>
                 
             </div>
@@ -87,26 +73,7 @@ const AccessibilityModal = ({ isOpen, onClose }) => {
 
                         Hide Images
                     </button>
-                    <button className="border p-2 rounded" onClick={() => applyTheme("big-cursor")}>
-                        <img src="/icons/BigCursor.svg" alt="A-" width={30} className="mx-auto" />
-
-                        Big Cursor
-                    </button>
-                    <button className="border p-2 rounded" onClick={() => applyTheme("big-cursor")}>
-                        <img src="/icons/ScreenReader.svg" alt="Screen Reader" width={30} className="mx-auto" />
-
-                        Screen Reader
-                    </button>
-                    <button className="border p-2 rounded" onClick={() => applyTheme("big-cursor")}>
-                        <img src="/icons/DarkMode.svg" alt="Dark Mode" width={30} className="mx-auto" />
-
-                        Dark Mode
-                    </button>
-                    <button className="border p-2 rounded" onClick={() => applyTheme("big-cursor")}>
-                        <img src="/icons/LightMode.svg" alt="Light Mode" width={30} className="mx-auto" />
-
-                        Light Mode
-                    </button>
+                   
                 </div>
             </div>
 

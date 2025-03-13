@@ -26,19 +26,7 @@ const DynamicBreadcrumbs = () => {
                 </div>
             </div>
 
-            {/* Navigation Tabs */}
-            <div className="bg-[#0B2641] mb-4 text-white py-6 md:py-8 px-4 md:px-8 rounded-lg w-full max-w-screen-xl mx-auto mt-[-30px] md:mt-[-60px] relative z-20">
-                <ul className="flex flex-wrap justify-center md:justify-start gap-3 md:gap-4 text-sm">
-                
-                    <li><Link to="#" className="px-4 py-2 rounded font-bold text-base md:text-lg block text-center">About Us</Link></li>
-                    <li><Link to="/guidance" className="px-4 py-2 rounded text-base md:text-lg block text-center">Guidance</Link></li>
-                    <li><Link to="#" className="px-4 py-2 rounded text-base md:text-lg block text-center">Organization Registration</Link></li>
-                    <li><Link to="#" className="px-4 py-2 rounded text-base md:text-lg block text-center">Application Submission</Link></li>
-                    <li><Link to="#" className="px-4 py-2 rounded text-base md:text-lg block text-center">Regulatory Documents</Link></li>
-                    <li><Link to="#" className="px-4 py-2 rounded text-base md:text-lg block text-center">Contact Us</Link></li>
-                    <li><Link to="#" className="px-4 py-2 rounded text-base md:text-lg block text-center">FAQ</Link></li>
-                </ul>
-            </div>
+         
         </section>
     );
 };

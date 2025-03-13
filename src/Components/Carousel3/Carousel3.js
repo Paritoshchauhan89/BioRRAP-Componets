@@ -28,7 +28,7 @@ const Carousel3 = () => {
     const goToSlide = (index) => setCurrentIndex(index);
 
     return (
-        <div className="bg-white rounded-lg shadow-md md:col-span-2 h-[20rem] relative flex items-center justify-center overflow-hidden">
+        <div className="bg-white rounded-lg shadow-md md:col-span-2 h-[20] relative flex items-center justify-center overflow-hidden">
             <div className="w-full h-full">
                 <img
                     src={images[currentIndex]}

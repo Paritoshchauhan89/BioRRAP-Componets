@@ -25,46 +25,23 @@ const Notification = () => {
         `}
             </style>
 
-            <div className="h-[37rem] rounded-lg bg-white">
+            <div className="h-[33rem] rounded-lg bg-white">
                 <div className="p-4 flex items-center bg-[#0B2641] rounded-md">
                     <img src="https://star.dbtindia.gov.in/assets/icons/announcement_icon.svg" width="40px" height="30pxs" alt />
                     <h2 className="text-white text-xl ">Notifications Links</h2>
                 </div>
-                <ul className="space-y-2 p-2 rounded-md h-[32rem] overflow-y-scroll custom-scrollbar">
-                    <li className="bg-gray-100 hover:bg-[#60aee3] hover:text-white p-3 text-lg border-l-4  rounded-lg border text-[#0B2641] border-l-color-[#0B2641]" style={{ borderLeftColor: '#0B2641' }}>
-                        <a href="#" className=" text-[#2966A3] hover:text-white ">Notification 1: Important </a>
-                    </li>
-                    <li className="bg-gray-100 hover:bg-[#60aee3] hover:text-white p-3 text-lg border-l-4  rounded-lg border text-[#0B2641] border-l-color-[#0B2641]" style={{ borderLeftColor: '#0B2641' }}>
-                        <a href="#" className=" text-[#2966A3] hover:text-white ">Notification 1: Important </a>
-                    </li>
-                    <li className="bg-gray-100 hover:bg-[#60aee3] hover:text-white  p-3 text-lg border-l-4  rounded-lg border text-[#0B2641] border-l-color-[#0B2641]" style={{ borderLeftColor: '#0B2641' }}>
-                        <a href="#" className=" text-[#2966A3] hover:text-white ">Notification 1: Important </a>
-                    </li>
-                    <li className="bg-gray-100 hover:bg-[#60aee3] hover:text-white  p-3 text-lg border-l-4  rounded-lg border text-[#0B2641] border-l-color-[#0B2641]" style={{ borderLeftColor: '#0B2641' }}>
-                        <a href="#" className=" text-[#2966A3] hover:text-white ">Notification 1: Important </a>
-                    </li>
-                    <li className="bg-gray-100 hover:bg-[#60aee3] hover:text-white  p-3 text-lg border-l-4  rounded-lg border text-[#0B2641] border-l-color-[#0B2641]" style={{ borderLeftColor: '#0B2641' }}>
-                        <a href="#" className=" text-[#2966A3] hover:text-white ">Notification 1: Important </a>
-                    </li>
-                    <li className="bg-gray-100 hover:bg-[#60aee3] hover:text-white  p-3 text-lg border-l-4  rounded-lg border text-[#0B2641] border-l-color-[#0B2641]" style={{ borderLeftColor: '#0B2641' }}>
-                        <a href="#" className="text-[#2966A3] hover:text-white ">Notification 1: Important </a>
-                    </li>
-                    <li className="bg-gray-100 hover:bg-[#60aee3] hover:text-white  p-3 text-lg border-l-4  rounded-lg border text-[#0B2641] border-l-color-[#0B2641]" style={{ borderLeftColor: '#0B2641' }}>
-                        <a href="#" className="text-[#2966A3] hover:text-white ">Notification 1: Important </a>
-                    </li>
-                    <li className="bg-gray-100 hover:bg-[#60aee3] hover:text-white  p-3 text-lg border-l-4  rounded-lg border text-[#0B2641] border-l-color-[#0B2641]" style={{ borderLeftColor: '#0B2641' }}>
-                        <a href="#" className=" text-[#2966A3] hover:text-white ">Notification 1: Important </a>
-                    </li>
-                    <li className="bg-gray-100 hover:bg-[#60aee3] hover:text-white  p-3 text-lg border-l-4  rounded-lg border text-[#0B2641] border-l-color-[#0B2641]" style={{ borderLeftColor: '#0B2641' }}>
-                        <a href="#" className=" text-[#2966A3] hover:text-white ">Notification 1: Important </a>
-                    </li>
-                    <li className="bg-gray-100 hover:bg-[#60aee3] hover:text-white  p-3 text-lg border-l-4  rounded-lg border text-[#0B2641] border-l-color-[#0B2641]" style={{ borderLeftColor: '#0B2641' }}>
-                        <a href="#" className=" text-[#2966A3] hover:text-white ">Notification 1: Important </a>
-                    </li>
-                    <li className="bg-gray-100 hover:bg-[#60aee3] hover:text-white  p-3 text-lg border-l-4  rounded-lg border text-[#0B2641] border-l-color-[#0B2641]" style={{ borderLeftColor: '#0B2641' }}>
-                        <a href="#" className=" text-[#2966A3] hover:text-white ">Notification 1: Important </a>
-                    </li>
+                <ul className="space-y-2 p-2 rounded-md h-[28rem] overflow-y-scroll custom-scrollbar">
+                    {Array(10).fill(0).map((_, index) => (
+                        <li
+                            key={index}
+                            className="bg-gray-100 hover:bg-[#60aee3] hover:text-white p-3 text-lg border-l-4 rounded-lg border text-[#0B2641]"
+                            style={{ borderLeftColor: '#0B2641' }}
+                        >
+                            <a href="#" className="block w-full">Notification {index + 1}: Important</a>
+                        </li>
+                    ))}
                 </ul>
+
             </div>
         </>
   )
