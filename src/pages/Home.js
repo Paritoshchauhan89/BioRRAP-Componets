@@ -1,10 +1,11 @@
-import React, { use, useState } from 'react';
+import React from 'react';
 import Carousel4 from '../Components/Carousel4/Carousel4';
 import Carousel3 from '../Components/Carousel3/Carousel3';
 import Carousel1 from '../Components/Carousel1/Carousel1';
 import Carousel2 from '../Components/Carousel2/Carousel2';
 import Notification from '../Components/Notification/Notification';
 import Layout from '../Layout/Layout';
+import Carousel5 from '../Components/Carousel5/Carousel5';
 
 const Home = () => {
   const data = [
@@ -87,32 +88,53 @@ const Home = () => {
         </div>
       </div>
 
-      {/* About Section */}
+    
       <div className="bg-gray-100  py-4">
-        <div className="max-w-7xl shadow-md rounded-lg bg-white p-10 mx-auto  text-center md:text-left">
-          <h2 className="text-2xl md:text-3xl">BioRRAP</h2>
-          <p className="text-sm md:text-base text-justify mt-2 mb-2">
+         <Carousel5/>
+
+      </div>
+      <div className="bg-gray-100 py-4">
+        <div className="max-w-7xl shadow-md rounded-lg bg-white p-6 sm:p-8 md:p-10 mx-auto text-center md:text-left">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold">BioRRAP</h2>
+
+          <p className="text-sm sm:text-base text-justify mt-2 mb-2">
             The Department of Biotechnology has developed Biological Research Regulatory Approval Portal (BioRRAP) to track the regulatory approvals for a research proposal on a single portal. This will provide more credibility and recognition to such biological researches.
-
-
           </p>
-          <p className="text-sm md:text-base text-justify mt-2 mb-2">
+
+          <p className="text-sm sm:text-base text-justify mt-2 mb-2">
             BioRRAP provides a single route to direct the applicant to regulatory agencies providing requisite approval relevant to the biological research. Based on a succinct set of questions responded in affirmative by the applicant, the list of regulatory agencies from whom approvals may be required for biological research, is determined and attached to the unique BioRRAP ID generated on the submission.
           </p>
-          <p className="text-sm md:text-base text-justify mt-2 mb-2">
+
+          <p className="text-sm sm:text-base text-justify mt-2 mb-2">
             This portal will strengthen interdepartmental synergies and increase efficacy in functioning of agencies regulating various aspect of biological research. This will streamline the regulatory process and affirm ease of doing biological science.
           </p>
-          <div className="max-w-6xl flex justify-center mt-4 mb-4 gap-10 mx-auto">
+
+          {/* Desktop Grid View */}
+          <div className="hidden md:flex flex-wrap justify-center mt-4 mb-4 gap-6 mx-auto max-w-6xl">
             {data.map((item, index) => (
-              <div key={index} className="flex flex-col items-center">
-                <img src={item.img_url} alt={item.name} className="w-[80px] h-[80px] object-contain" />
-                <p className="text-center text-sm mt-2 font-md">{item.name}</p>
+              <div key={index} className="flex flex-col items-center w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6">
+                <img src={item.img_url} alt={item.name} className="w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] object-contain" />
+                <p className="text-center text-sm mt-2 font-medium">{item.name}</p>
               </div>
             ))}
           </div>
 
+          {/* Mobile Scrollable View */}
+          <div className="md:hidden overflow-x-auto scrollbar-hide mt-4 mb-4">
+            <div className="flex space-x-6 w-max px-4">
+              {data.map((item, index) => (
+                <div key={index} className="flex flex-col items-center min-w-[100px]">
+                  <img src={item.img_url} alt={item.name} className="w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] object-contain" />
+                  <p className="text-center text-sm mt-2 font-medium">{item.name}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
+
+
       </div>
+
 
     </Layout>
   );
