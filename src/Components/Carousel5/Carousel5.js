@@ -90,7 +90,7 @@ const Carousel5 = () => {
     }, []);
 
     const totalSlides = slides.length;
-    const totalPages = Math.ceil(totalSlides / slidesToShow);
+    // const totalPages = Math.ceil(totalSlides / slidesToShow);
 
     const nextSlide = () => {
         setCurrentIndex((prevIndex) => (prevIndex + slidesToShow) % totalSlides);

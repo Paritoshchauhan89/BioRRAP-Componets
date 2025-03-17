@@ -58,14 +58,14 @@ const Home = () => {
 
           <div className="md:col-span-1">
             <section className="grid gap-4">
-              <div className="bg-[#2966A3] rounded-lg shadow-md h-[5rem] flex items-center px-6">
+              <div className="bg-[#2966A3] rounded-lg shadow-md h-auto sm:h-[5rem] flex flex-col sm:flex-row items-center px-4 sm:px-6 py-3 sm:py-0">
                 {/* Left Side: Logo */}
                 <div className="flex items-center">
-                  <img src="/img/Biorraplogo.png" alt="BioRRAP" width={"auto"} height={100}  />
+                  <img src="/img/Biorraplogo.png" alt="BioRRAP" className="h-10 sm:h-[3rem] w-auto" />
                 </div>
 
-                {/* Right Side: Buttons */}
-                <div className="ml-auto flex gap-4">
+                {/* Right Side: Buttons (Centered on Mobile, Right-Aligned on Desktop) */}
+                <div className="w-full sm:w-auto flex justify-center sm:ml-auto flex-row sm:gap-4 gap-2 mt-2 sm:mt-0">
                   <button className="text-[#2966A3] bg-white px-6 py-2 rounded-lg font-semibold min-w-[120px] hover:bg-gray-100 transition">
                     Login
                   </button>
@@ -74,8 +74,10 @@ const Home = () => {
                   </button>
                 </div>
               </div>
-              <Notification/>
+              <Notification />
             </section>
+
+
           </div>
         </div>
       </div>
