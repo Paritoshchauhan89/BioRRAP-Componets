@@ -7,7 +7,7 @@ import { useState, useRef } from "react";
 
 
 const Home = () => {
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
 
   const togglePlayPause = () => {
@@ -21,50 +21,7 @@ const Home = () => {
       }
     }
   };
-  const data = [
-    {
-      "img_url": "/img/Govlogo.png",
-      "name": "IBSC",
-    },
-    {
-      "img_url": "https://biorrap.gov.in/Default/img/rcgm.jpg",
-      "name": "RCGM",
-    },
-    {
-      "img_url": "https://biorrap.gov.in/Default/img/geac.jpg",
-      "name": "GEAC",
-    },
-    {
-      "img_url": "/img/Govlogo.png",
-      "name": "CPCSEA",
-    },
-    {
-      "img_url": "https://biorrap.gov.in/Default/img/nba.jpg",
-      "name": "NBA",
-    },
-    
-    {
-      "img_url": "/img/Govlogo.png",
-      "name": "IAECs",
-    },
-   
-    {
-      "img_url": "/img/Govlogo.png",
-      "name": "DAHD",
-    },
-    {
-      "img_url": "https://biorrap.gov.in/Default/img/cdsco.jpg",
-      "name": "CDSCO",
-    },
-    {
-      "img_url": "/img/Govlogo.png",
-      "name": "IHEC",
-    }, 
-    {
-      "img_url": "http://biorrap.gov.in/Default/img/icmr.jpg",
-      "name": "HMSC",
-    },
-  ];
+
   return (
     <Layout>
       <div className="bg-gray-100 w-full">
@@ -85,7 +42,7 @@ const Home = () => {
               </div>
 
               {/* Quote Section */}
-              <div className="w-full md:w-3/4 bg-white p-6 rounded-lg shadow-md flex flex-col justify-center">
+              <div className="w-full md:w-3/4 bg-white p-6 rounded-lg shadow-md flex flex-col justify-center h-[22rem] h-auto">
                 <h2 className="text-xl font-bold text-gray-800">Inspirational Words</h2>
                 <p className="text-lg italic text-gray-600 mt-2">
                   "For the first time, the World Audio Visual Entertainment Summit (WAVES) is going to be organized in our country.
@@ -143,7 +100,7 @@ const Home = () => {
           <p className="text-sm sm:text-base text-justify mt-2 mb-2">
             This portal will strengthen interdepartmental synergies and increase efficacy in functioning of agencies regulating various aspect of biological research. This will streamline the regulatory process and affirm ease of doing biological science.
           </p>
-          <div className="relative mx-auto mt-4 mb-4 w-80 max-w-xs sm:max-w-md">
+          <div className="relative mx-auto mt-4 mb-4 w-160 max-w-xs sm:max-w-md">
             {/* Video Element */}
             <video
               ref={videoRef}
