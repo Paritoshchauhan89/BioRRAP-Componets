@@ -3,13 +3,20 @@ import Carousel3 from '../Components/Carousel3/Carousel3';
 import Notification from '../Components/Notification/Notification';
 import Layout from '../Layout/Layout';
 import Carousel5 from '../Components/Carousel5/Carousel5';
-import { useState, useRef } from "react";
+import { useState, useEffect ,  useRef } from "react";
 
 
 const Home = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false); // Ensure video starts paused
   const videoRef = useRef(null);
 
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.pause(); // Ensures video is paused on mount
+    }
+  }, []);
+
+  // 🔹 Function must be inside the component
   const togglePlayPause = () => {
     if (videoRef.current) {
       if (videoRef.current.paused) {
@@ -21,7 +28,6 @@ const Home = () => {
       }
     }
   };
-
   return (
     <Layout>
       <div className="bg-gray-100 w-full">
@@ -108,20 +114,18 @@ const Home = () => {
               ref={videoRef}
               src="/video/biorrap_intro.mov"
               className="w-full rounded-lg shadow-md"
-              // controls
-              autoPlay
               muted
             />
 
             {/* Play/Pause Button */}
             <button
-              onClick={togglePlayPause}
+              onClick={togglePlayPause} // ✅ No more error
               className="absolute inset-0 flex items-center justify-center w-full h-full bg-black bg-opacity-10 hover:bg-opacity-30 transition-opacity duration-200 rounded-lg border-0"
             >
               {isPlaying ? (
-                <i className="bi bi-pause-fill text-black display-4 text-lg rounded-lg bg-gray-300 p-2"></i> // Bootstrap Pause Icon
+                <i className="bi bi-pause-fill text-black display-4 text-lg rounded-lg bg-gray-300 p-2"></i>
               ) : (
-                  <i className="bi bi-play-fill text-black display-4 text-lg rounded-lg bg-gray-300 p-2"></i> // Bootstrap Play Icon
+                <i className="bi bi-play-fill text-black display-4 text-lg rounded-lg bg-gray-300 p-2"></i>
               )}
             </button>
           </div>
