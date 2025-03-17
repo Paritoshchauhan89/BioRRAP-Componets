@@ -10,7 +10,7 @@ const Carousel5 = () => {
             "link": "",
         },
         {
-            "img_url": "https://biorrap.gov.in/Default/img/rcgm.jpg",
+            "img_url": "/img/rcgm.png",
             "name": "RCGM",
             "desc": "Import, export, and exchange of Regulated items more than the specified quantity.",
             "title": "Institutional Biosafety Committee (IBSC) of the organization",
@@ -54,7 +54,7 @@ const Carousel5 = () => {
             "link": "",
         },
         {
-            "img_url": "https://biorrap.gov.in/Default/img/cdsco.jpg",
+            "img_url": "/img/cdsco.png",
             "name": "CDSCO",
             "desc": "The application for field trial along with covering letter and trial protocol.",
             "title": "Central Drugs Standard Control Organization (CDSCO)",
